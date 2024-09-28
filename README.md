@@ -1,2 +1,2 @@
-# [WebStudio](https://alxwdev.github.io/web-studio/)
+# <a href="https://alxwdev.github.io/web-studio/" target="_blank">WebStudio</a>
 Small multi-page site. Adaptive layout for mobile, tablet, desktop. It is for orders and information about a company engaged in the development of websites.
