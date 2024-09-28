@@ -1,0 +1,91 @@
+/* ========== Benefits ========== */
+.benefits {
+  &__item {
+    &::before {
+      content: "";
+      display: block;
+      height: 120px;
+      margin-bottom: 30px;
+      border-radius: 4px;
+      background-color: #F5F4FA;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 70px 70px;
+    }
+
+    &:nth-child(1) {
+      &::before {
+        background-image: url(../images/main/index/benefits/icon-satellite-dish.svg);
+      }
+    }
+    
+    &:nth-child(2) {
+      &::before {
+        background-image: url(../images/main/index/benefits/icon-clock.svg);
+      }
+    }
+    
+    &:nth-child(3) {
+      &::before {
+        background-image: url(../images/main/index/benefits/icon-laptop.svg);
+      }
+    }
+    
+    &:nth-child(4) {
+      &::before {
+        background-image: url(../images/main/index/benefits/icon-astronaut.svg);
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 10px;
+    @include font(700, 14px, 16px, $title-white-theme-color);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    @include font(400, 14px, 24px, $text-white-theme-color);
+    letter-spacing: 0.03em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .benefits {
+    &__item {
+      &:not(:last-child) {
+        margin: 0 0 30px 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .benefits {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -15px;
+    }
+
+    &__item {
+      width: calc((100% - 4 * 15px) / 2);
+      margin: 15px;
+    }
+
+    &__title {
+      text-align: left;
+    }
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .benefits {
+    &__list {
+      flex-wrap: nowrap;
+    }
+  }
+}
+/* ========== End Benefits ========== */

@@ -1,0 +1,36 @@
+/* ========== Common ========== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $main-font;
+  font-style: normal;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+}
+/* ========== End Common ========== */

@@ -1,0 +1,274 @@
+/* ========== Header ========== */
+.header {
+  position: relative;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    height: 60px;
+  }
+
+  &__logo {
+    margin-right: auto;
+  }
+
+  &__menu-button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  &__icon-cross {
+    display: none;
+
+    .header__menu-button.is-open:hover &,
+    .header__menu-button.is-open:hover & {
+      fill: $accent-color;
+    }
+  }
+
+  &__icon-menu {
+    .header__menu-button:hover &,
+    .header__menu-button:focus & {
+      fill: $accent-color;
+    }
+  }
+
+  &__menu-button.is-open &__icon-cross {
+    display: block;
+  }
+
+  &__menu-button.is-open &__icon-menu {
+    display: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #ECECEC;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    &__menu-container {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 100;
+      display: none;
+      width: 100%;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      background-color: #fff;
+
+      &.is-open {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .header {
+    &__menu-button {
+      display: none;
+    }
+  
+    &__container {
+      height: 80px;
+    }
+  
+    &__menu-container {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+/* ========== End Header ========== */
+
+/* ========== Navigation ========== */
+.navigation {
+  &__link {
+    position: relative;
+    display: inline-block;
+    @include font(500, 18px, 21px, $title-white-theme-color);
+    letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+    }
+  }
+
+  &__link--active {
+    padding-bottom: 12px;
+    color: $accent-color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: $accent-color;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    text-align: center;
+    margin-bottom: 60px;
+  
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .navigation {
+    margin-right: 84px;
+
+    &__list {
+      display: flex;
+    }
+  
+    &__item {
+      &:not(:last-child) {
+        margin-right: 50px;
+      }
+    }
+  
+    &__link {
+      padding-top: 32px;
+      padding-bottom: 32px;
+      font-size: 14px;
+      line-height: 1.143;
+    }
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .navigation {
+    margin-right: 304px;
+  }
+}
+/* ========== End Navigation ========== */
+
+/* ========== Header Address ========== */
+.header-address {
+  font-style: normal;
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    @include font(500, 18px, 21px, $text-white-theme-color);
+    letter-spacing: 0.02em;
+    fill: $text-white-theme-color;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      color: $accent-color;
+      fill: $accent-color;
+    }
+  }
+
+  &__icon {
+    display: block;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header-address {
+    &__item {
+      &:first-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-address {
+    text-align: center;
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .header-address {
+    &__link {
+      display: flex;
+      font-size: 12px;
+      line-height: 1.167;
+    }
+  
+    &__icon {
+      margin-right: 8px;
+    }
+
+    &__icon-tel {
+      width: 14px;
+      height: 10px;
+    }
+  
+    &__icon-mail {
+      width: 10px;
+      height: 14px;
+    }
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .header-address {
+    &__list {
+      display: flex;
+    }
+  
+    &__item {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  
+    &__link {
+      font-size: 14px;
+      line-height: 1.143;
+    }
+  
+    &__icon {
+      margin-right: 10px;
+    }
+
+    &__icon-tel {
+      width: 16px;
+      height: 12px;
+    }
+  
+    &__icon-mail {
+      width: 10px;
+      height: 16px;
+    }
+  }
+}
+/* ========== End Header Address ========== */
