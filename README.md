@@ -1,1 +1,2 @@
-# web-studio
+# [WebStudio](https://alxwdev.github.io/web-studio/)
+Small multi-page site. Adaptive layout for mobile, tablet, desktop. It is for orders and information about a company engaged in the development of websites.
